@@ -81,4 +81,13 @@ elif selected_page == "Prediction App":
         #dmatrix = xgb.DMatrix(features)
         #prediction = model.predict(dmatrix)
         price = predict(Age, Ethnicity, Gender, Hypertension, Diabetes, Smoking, Alcohol, COPD, IMD_Bin)
-        st.write('Prediction:', price[0])
+        prediction_label = int(price[0])  # Assuming model returns a class label as output
+
+        # Map the label to the corresponding string
+        label_map = {
+            0.0: "Short LOS (<2 days)",
+            1.0: "Long LOS (2-3 days)",
+            2.0: "Extended LOS (>3 days)"
+            }
+
+        st.write('Predicted Length of Stay:', label_map[prediction_label])
