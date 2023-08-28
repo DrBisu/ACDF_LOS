@@ -59,6 +59,8 @@ if selected_page == "Information":
     
     ## XGBoost Model
     Utilize the sidebar to navigate to the prediction app and try out the model yourself!
+
+    ## Not for Clinical use. For Research use only. 
     """)
 
 elif selected_page == "Prediction App":
